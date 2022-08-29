@@ -23,27 +23,8 @@ app.engine('hbs', hbs.engine({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
-
 //Route init
 route(app);
-
-app.get('/', (req, res) => {
-  res.render('home');
-})
-
-app.get('/news', (req, res) => {
-  console.log(req.query.q);
-  res.render('news');
-})
-
-app.get('/search', (req, res) => {
-  res.render('search');
-})
-
-app.post('/search', (req, res) => {
-  console.log(req.body);
-  res.send('');
-})
 
 app.listen(port, () => {
   console.log(`Example app listening http://localhost:${port}`)
