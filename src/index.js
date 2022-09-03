@@ -3,6 +3,8 @@ const express = require('express');
 const morgan = require('morgan');
 const hbs = require('express-handlebars');
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 const port = 3000;
 
 const route = require('./routes');
